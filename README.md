@@ -10,8 +10,8 @@ StockSelection-RSI is a python project which deals with the selection of Indian 
 #### Numpy
 - [Install Numpy Package](http://www.numpy.org/).
 
-#### OpenCV
-- [Install OpenCV Package](https://opencv.org/).
+#### Pandas
+- [Install Pandas Package](https://pandas.pydata.org/).
 
 ## Installation:
 
@@ -25,12 +25,10 @@ To run them, you also need the latest version of Numpy. To install it:
 pip install --upgarde numpy
 ```
 
-The latest version of OpenCV. To install it:
+The latest version of Pandas. To install it:
 ```
-pip install --upgarde opencv-python
+pip install --upgarde pandas
 ```
-
-For more details about TensorFlow installation, you can check [TensorFlow Installation Guide](https://www.tensorflow.org/install/).
 
 ## About:
 - **Numpy** : NumPy is the fundamental package for scientific computing with Python. It contains among other things: a powerful N-dimensional array object. sophisticated (broadcasting) functions.
@@ -39,11 +37,11 @@ NumPy is a package in Python used for Scientific Computing. NumPy package is use
 
 Get more information about Numpy at it's [Official Website](http://www.numpy.org/).
 
-- **OpenCV** : OpenCV-Python is a library of Python bindings designed to solve computer vision problems. Python is a general purpose programming language started by Guido van Rossum(Author of Python) that became very popular very quickly, mainly because of its simplicity and code readability.
+- **Pandas** : pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 
-OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
+In computer programming, pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. It is free software released under the three-clause BSD license.
 
-Get more information about OpenCV at it's [Official Website](https://opencv.org/).
+Get more information about Pandas at it's [Official Website](https://pandas.pydata.org/).
 
 ## Credits:
 
