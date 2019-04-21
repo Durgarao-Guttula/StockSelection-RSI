@@ -4,6 +4,7 @@ from nsepy import get_history
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing, neighbors
+import matplotlib.pyplot as plt
 
 def find_trend(stock):
 	his = hist(stock)
@@ -31,6 +32,15 @@ def find_trend(stock):
 	#print(rsi) #['Date', 'Symbol', 'Prev Close', 'Open', 'High', 'Low', 'Last', 'Close', 'Change', 'Gain', 'Loss']
 	his['RSI'] = rsi[::-1]
 	print(his)
+	plt.plot(his['Open'])
+	plt.plot(his['High'])
+	plt.plot(his['Low'])
+	plt.plot(his['Close'])
+	plt.legend()
+	plt.show()
+	plt.plot(his['RSI'])
+	plt.legend()
+	plt.show()
 	return
 
 def gain_and_loss(data):
@@ -108,7 +118,7 @@ for i in range(15):
 		rsi.append(rsi_of_stock(data['SYMBOL'][i]))
 	except:
 		rsi.append(0)
-	print(i)
+	# print(i)
 data = data.reset_index(drop=True)
 data['RSI'] = rsi
 for i in range(len(data)):
