@@ -5,6 +5,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing, neighbors
 import matplotlib.pyplot as plt
+from mpl_finance import candlestick_ohlc #pip install https://github.com/matplotlib/mpl_finance/archive/master.zip
+from matplotlib.dates import date2num
 
 def find_trend(stock):
 	his = hist(stock)
@@ -32,14 +34,11 @@ def find_trend(stock):
 	#print(rsi) #['Date', 'Symbol', 'Prev Close', 'Open', 'High', 'Low', 'Last', 'Close', 'Change', 'Gain', 'Loss']
 	his['RSI'] = rsi[::-1]
 	print(his)
-	plt.plot(his['Open'])
-	plt.plot(his['High'])
-	plt.plot(his['Low'])
-	plt.plot(his['Close'])
-	plt.legend()
-	plt.show()
-	plt.plot(his['RSI'])
-	plt.legend()
+	ax1 = plt.subplot()
+	d = [int(str(his['Date'][i]).split('-')[-1]) for i in range(len(his['Date']))]
+	candlestick_ohlc(ax1,zip(his['Date'].apply(date2num),his['Open'],his['High'],his['Low'],his['Close']))
+	ax2 = plt.subplot()
+	ax2.plot(his['Date'],his['RSI'])
 	plt.show()
 	return
 
