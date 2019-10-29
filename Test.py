@@ -111,8 +111,8 @@ data = select_stock(data)
 rsi = []
 predicts = []
 # for i in range(len(data)):
-data = data[:15]
-for i in range(15):
+data = data[:50]
+for i in range(50):
 	try:
 		rsi.append(rsi_of_stock(data['SYMBOL'][i]))
 	except:
@@ -127,6 +127,9 @@ data = data.reset_index(drop=True)
 # for i in range(len(data)):
 # 	predicts.append(find_trend(data['SYMBOL'][i]))
 # data['TREND'] = predicts
-t = find_trend(data['SYMBOL'][1])
-#print(data)
+#t = find_trend(data['SYMBOL'][1])
+da = data.RSI >= 70
+print("RSI >= 70\n\n\n", data[da])
+da = data.RSI <= 30
+print("RSI <= 30\n\n", data[da])
 # data.to_csv('Stock_data.csv', sep=',',index = False, encoding='utf-8')
